@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fajar Adrianto - Portofolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #00FF00; /* Neon Green */
+            --secondary-color: #008000; /* Darker Green */
+            --background-dark: #0A192F; /* Deep Blue-Black */
+            --text-light: #00FFFF; /* Aqua Blue */
+            --text-muted: #888888;
+            --border-color: #00FF00; /* Neon Green */
+        }
+
+        body {
+            font-family: 'Roboto Mono', monospace;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-dark);
+            color: var(--primary-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            background-color: #1a1a1a;
+            border: 2px solid var(--primary-color);
+            box-shadow: 0 0 10px var(--primary-color);
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 1rem 0;
+            position: relative;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            text-shadow: 0 0 5px var(--primary-color);
+        }
+
+        .profile-pic {
+            display: none;
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            padding: 1rem;
+            background-color: #1a1a1a;
+            border: 1px dashed var(--primary-color);
+            border-radius: 8px;
+        }
+        
+        .sidebar, .content {
+            width: 100%;
+            padding: 0;
+            border: none;
+            background-color: transparent;
+            margin-bottom: 0;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .section h2 {
+            font-size: 1.5rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            text-shadow: 0 0 3px var(--border-color);
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+
+        p, li {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--text-light);
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        ul li i {
+            width: 25px;
+            text-align: center;
+            color: var(--primary-color);
+            margin-right: 10px;
+            text-shadow: 0 0 2px var(--primary-color);
+        }
+
+        /* Skills section */
+        .skills-list {
+            margin-top: 1rem;
+        }
+
+        .skill-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.8rem;
+            color: var(--text-light);
+        }
+
+        .skill-item span {
+            width: 120px;
+        }
+
+        .rating {
+            display: flex;
+            gap: 5px;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        .rating .filled {
+            color: var(--primary-color);
+            text-shadow: 0 0 2px var(--primary-color);
+        }
+
+        /* Content Section */
+        .entry {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .entry h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            text-shadow: 0 0 2px var(--primary-color);
+        }
+
+        .entry p {
+            margin: 0.2rem 0;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .entry .year {
+            position: static;
+            display: block;
+            margin-top: 5px;
+            font-weight: 600;
+            color: var(--primary-color);
+            font-size: 0.9rem;
+        }
+        
+        .entry ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 0.5rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .entry ul li::before {
+            content: "> ";
+            color: var(--primary-color);
+        }
+
+        /* Video Section */
+        .video-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .video-wrapper {
+            position: relative;
+            width: 80%; /* Sesuaikan lebar sesuai keinginan Anda */
+            padding-bottom: calc(80% * 3 / 4); /* Rasio aspek 4:3 */
+            overflow: hidden;
+            border: 1px dashed var(--primary-color);
+            border-radius: 5px;
+        }
+
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Memastikan video sesuai dengan rasio aspek tanpa terdistorsi */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header class="header">
+        <h1>名前 : MUHAMMAD FATKHUL AMIN</h1>
+    </header>
+
+    <main class="main-content">
+        <section class="section">
+            <h2>PROFIL 👤</h2>
+            <p>seorang pelajar yang memiliki semangat untuk bekerja sama dan belajar dalam kemampuan merencanakan manipulasi di Jaringan</p>
+        </section>
+        <section class="section">
+            <h2>KONTAK 📱</h2>
+            <ul>
+                <li><i class="fas fa-terminal"></i> TEL: +6281284090061</li>
+                <li><i class="fas fa-terminal"></i> EMAIL: serverdoomsday99@gmail.com</li>
+                <li><i class="fas fa-terminal"></i> LOC: Jateng,Indonesia</li>
+                <li><i class="fas fa-terminal"></i> IG: azq1178</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>KEAHLIAN 🧢</h2>
+            <div class="skills-list">
+                <div class="skill-item">
+                    <span>KERJA SAMA</span>
+                    <div class="rating">
+                        <i class="fas fa-square filled"></i>
+                        <i class="fas fa-square filled"></i>
+                        <i class="fas fa-square filled"></i>
+                        <i class="fas fa-square filled"></i>
+                        <i class="fas fa-square filled"></i>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span>FLEKSIBEL</span>
+                    <div class="rating">
+                        <i class="fas fa-square filled"></i>
+                        <i class="fas fa-square filled"></i>
+                        <i class="fas fa-square filled"></i>
+                        <i class="fas fa-square"></i>
+                        <i class="fas fa-square"></i>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span>KREATIF</span>
+                    <div class="rating">
+                        <i class="fas fa-square filled"></i>
+                        <i class="fas fa-square filled"></i>
+                        <i class="fas fa-square filled"></i>
+                        <i class="fas fa-square filled"></i>
+                        <i class="fas fa-square"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>PENDIDIKAN 🎓</h2>
+            <div class="entry">
+                <h3>[SMKS] HADZIQIYYAH</h3>
+                <p>TJKT Computer and telecommunications network techniques</p>
+                <span class="year">2022 - 2025</span>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>PENGALAMAN 🔬</h2>
+            <div class="entry">
+                <h3>MEDIA SOSIAL FREELANCE</h3>
+                <ul>
+                    <li>perbaikan script web </li>
+                    <li>Pembuatan Bot WhatsApp </li>
+                </ul>
+            </div>
+        </section>
+        <section class="section">
+    <h2>WEB PEMINDAIAN JARINGAN & ENUMERASI 🚀</h2>
+    <div class="entry">
+        <h3>Shodan</h3>
+        <p>Mesin pencari untuk perangkat yang terhubung ke internet 🌐</p>
+        <ul>
+            <li>🔗 https://www.shodan.io</li>
+        </ul>
+    </div>
+    <div class="entry">
+        <h3>Censys</h3>
+        <p>Mirip dengan Shodan, cocok untuk analisis lebih dalam</p>
+        <ul>
+            <li>🔗 https://censys.io</li>
+        </ul>
+    </div>
+    <div class="entry">
+        <h3>ZoomEye</h3>
+        <p>Mesin pencari perangkat & layanan berbasis IP</p>
+        <ul>
+            <li>🔗 https://www.zoomeye.org</li>
+        </ul>
+    </div>
+</section>
+    </main>
+    
+    <div id="video-content" class="content-section">
+        <div class="video-container">
+            <div class="video-wrapper">
+                <video controls autoplay loop playsinline controlsList="nodownload">
+                    <source src="videos1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
