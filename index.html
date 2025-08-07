@@ -1,204 +1,551 @@
-<!DOCTYPE html>
+           background: linear-gradient(
+                to bottom,
+                rgba(0, 255, 65, 0.03) 0%,
+                rgba(0, 0, 0, 0.1) 50%,
+                rgba(0, 255, 65, 0.03) 100%
+            );
+            background-size: 100% 4px;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        /* Responsive adjustments */
+        @media (min-width: 768px) {
+            .container {
+                padding: 2rem;
+            }
+            
+            .main-content {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .section-wide {
+                grid-column: span 2;
+            }
+            
+            .header h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+        /* Hacker typing animation */
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        /* Glitch effect */
+        .glitch {
+            position: relative;
+        }
+
+        .glitch::before, .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+        }
+
+        .glitch::before {
+            color: #0ff;
+            z-index: -1;
+            animation: glitch-effect 3s infinite;
+        }
+
+        .glitch::after {
+            color: #f0f;
+            z-index: -2;
+            animation: glitch-effect 2s infinite reverse;
+        }
+
+        @keyframes glitch-effect {
+            0% { transform: translate(0) }
+            20% { transform: translate(-3px, 3px) }
+            40% { transform: translate(-3px, -3px) }
+            60% { transform: translate(3px, 3px) }
+            80% { transform: translate(3px, -3px) }
+            100% { transform: translate(0) }
+        }
+
+        /* Binary rain effect */
+        .binary-rain {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+            opacity: 0.1;
+        }
+
+        .binary-digit {
+            position: absolute;
+            color: var(--primary-color);
+            font-size: 0.8rem;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to { transform: translateY(100vh) }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="binary-rain" id="binaryRain"></div>
+    <div class="scanlines"></div>
+    
+    <header class="header">
+        <h1 class="glitch" data-text="MUHAMMAD FATKHUL AMIN">MUHAMMAD FATKHUL AMIN</h1>
+        <div class="terminal-line">
+            <span class="prompt">@junior_student_root</span>
+            <span class="typing-text"></span>
+        </div>
+        <p>Network Security Researcher | Ethical Student</p>
+    </header>
+    
+    <div class="media-container">
+        <div class="gif-wrapper">
+            <img src="1.gif" alt="Matrix Code Animation">
+        </div>
+    </div>
+    
+    <main class="main-content">
+        <section class="section">
+            <h2><span class="prompt">👤</span> PROFIL</h2>
+            <div class="terminal-line">
+                <span class="prompt"></span>
+                <p>Seorang pelajar yang memiliki semangat untuk belajar dan kerja sama dalam keamanan jaringan, eksploitasi sistem, manipulasi jaringan dan pengembangan tools keamanan.</p>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2><span class="prompt">📱</span> KONTAK</h2>
+            <ul>
+                <li><span class="prompt">$</span> Telp: +6281284090061</li>
+                <li><span class="prompt">$</span> Email: serverdoomsday99@gmail.com</li>
+                <li><span class="prompt">$</span> Lokasi: Jateng, Indonesia</li>
+                <li><span class="prompt">$</span> Github : qilp95</li>
+                <li><span class="prompt">$</span> IG: azq1178</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2><span class="prompt">🧢</span> KEAHLIAN</h2>
+            <div class="skills-list">
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span class="prompt">></span> kerja sama
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-circle filled"></i>
+                        <i class="fas fa-circle filled"></i>
+                        <i class="fas fa-circle filled"></i>
+                        <i class="fas fa-circle filled"></i>
+                        <i class="fas fa-circle"></i>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span class="prompt">></span> pengembangan script
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-circle filled"></i>
+                        <i class="fas fa-circle filled"></i>
+                        <i class="fas fa-circle filled"></i>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span class="prompt">></span> fleksibel
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-circle filled"></i>
+                        <i class="fas fa-circle filled"></i>
+                        <i class="fas fa-circle filled"></i>
+                        <i class="fas fa-circle filled"></i>
+                        <i class="fas fa-circle filled"></i>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span class="prompt">></span> kreatif
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-circle filled"></i>
+                        <i class="fas fa-circle filled"></i>
+                        <i class="fas fa-circle"></i>
+                        <i class="fas fa-circle"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2><span class="prompt">🎓</span> PENDIDIKAN</h2>
+            <div class="entry">
+                <h3><span class="prompt">></span> SMKS Hadziqiyyah</h3>
+                <p>Teknik Jaringan Komputer dan Telekomunikasi (TJKT)</p>
+                <span class="year">2022 - 2025</span>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2><span class="prompt">🔬</span> PENGALAMAN</h2>
+            <div class="entry">
+                <h3><span class="prompt">></span> Perbaikan script</h3>
+                <h3><span class="prompt">></span> pengembangan script bot</h3>
+            </div>
+        </section>
+        
+        <section class="section section-wide">
+            <h2><span class="prompt">🚀</span> SECURITY TOOLS</h2>
+            <div class="entry">
+                <h3><span class="prompt">•</span> Shodan</h3>
+                <p>Mesin pencari untuk perangkat yang terhubung ke internet</p>
+                <p><span class="prompt"></span> <a href="https://www.shodan.io" target="_blank">https://www.shodan.io</a></p>
+            </div>
+            <div class="entry">
+                <h3><span class="prompt">•</span> Censys</h3>
+                <p>Platform intelijen internet untuk asset discovery</p>
+                <p><span class="prompt"></span> <a href="https://censys.io" target="_blank">https://censys.io</a></p>
+            </div>
+            <div class="entry">
+                <h3><span class="prompt">•</span> ZoomEye</h3>
+                <p>Cybersecurity search engine untuk perangkat jaringan</p>
+                <p><span class="prompt"></span> <a href="https://www.zoomeye.org" target="_blank">https://www.zoomeye.org</a></p>
+            </div>
+        </section>
+    </main>
+    
+    <div class="media-container">
+        <div class="video-wrapper">
+            <video controls autoplay loop playsinline controlsList="nodownload">
+                <source src="videos1.mp4" type="video/mp4">
+                [!] Browser tidak mendukung video
+            </video>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Binary rain effect
+    const binaryRain = document.getElementById('binaryRain');
+    const chars = '01';
+    
+    function createBinary() {
+        const digit = document.createElement('div');
+        digit.className = 'binary-digit';
+        digit.textContent = chars.charAt(Math.floor(Math.random() * chars.length));
+        digit.style.left = Math.random() * 100 + 'vw';
+        digit.style.animationDuration = (Math.random() * 3 + 2) + 's';
+        digit.style.animationDelay = Math.random() * 5 + 's';
+        binaryRain.appendChild(digit);
+        
+        // Remove digit after animation completes
+        setTimeout(() => {
+            digit.remove();
+        }, parseFloat(digit.style.animationDuration) * 1000);
+    }
+    
+    // Create initial binary digits
+    for (let i = 0; i < 50; i++) {
+        createBinary();
+    }
+    
+    // Continue creating new digits
+    setInterval(createBinary, 100);
+    
+    // Terminal typing effect
+    const typingText = document.querySelector('.typing-text');
+    const text = "sebagai identitas";
+    let i = 0;
+    
+    function typeWriter() {
+        if (i < text.length) {
+            typingText.textContent += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, Math.random() * 200 + 50);
+        } else {
+            // After typing completes, keep blinking cursor
+            document.querySelector('.cursor').style.animation = 'blink 1s infinite';
+        }
+    }
+    
+    // Start typing after a delay
+    setTimeout(typeWriter, 1000);
+</script>
+</body>
+</html><!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>muhammad fatkhul amin - Portofolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Muhammad Fatkhul Amin - simple Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
-            --primary-color: #00FF00; /* Neon Green */
-            --secondary-color: #008000; /* Darker Green */
-            --background-dark: #0A192F; /* Deep Blue-Black */
-            --text-light: #00FFFF; /* Aqua Blue */
-            --text-muted: #888888;
-            --border-color: #00FF00; /* Neon Green */
+            --primary-color: #00FF41; /* Matrix Green */
+            --secondary-color: #008F11; /* Darker Green */
+            --background-dark: #000000; /* Pure black */
+            --text-light: #00FF41; /* Matrix Green */
+            --text-muted: #007F0E;
+            --border-color: #00FF41;
+            --card-bg: rgba(0, 0, 0, 0.7);
+            --glow: 0 0 10px var(--primary-color);
+            --section-spacing: 1.5rem;
         }
 
         body {
-            font-family: 'Roboto Mono', monospace;
+            font-family: 'Share Tech Mono', monospace;
             margin: 0;
             padding: 0;
             background-color: var(--background-dark);
-            color: var(--primary-color);
+            background-image: url('image1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--text-light);
+            line-height: 1.5;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            padding: 1rem;
+            overflow-x: hidden;
         }
 
         .container {
-            width: 90%;
+            width: 100%;
             max-width: 900px;
-            background-color: #1a1a1a;
-            border: 2px solid var(--primary-color);
-            box-shadow: 0 0 10px var(--primary-color);
-            display: flex;
-            flex-direction: column;
-            padding: 20px;
-            border-radius: 10px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--glow);
+            border-radius: 0;
+            padding: 1.5rem;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(5px);
+        }
+
+        .container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+            box-shadow: var(--glow);
         }
 
         .header {
             text-align: center;
             padding: 1rem 0;
             position: relative;
+            margin-bottom: 1.5rem;
         }
 
         .header h1 {
             margin: 0;
-            font-size: 2.5rem;
+            font-size: 2rem;
+            font-weight: normal;
+            color: var(--primary-color);
+            text-shadow: var(--glow);
+            letter-spacing: 2px;
+        }
+
+        .header p {
+            margin-top: 0.5rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
             text-shadow: 0 0 5px var(--primary-color);
         }
 
-        .profile-pic {
-            display: none;
+        .terminal-line {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .prompt {
+            color: var(--primary-color);
+            margin-right: 0.5rem;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 15px;
+            background-color: var(--primary-color);
+            animation: blink 1s infinite;
+            margin-left: 0.3rem;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
         }
 
         .main-content {
-            display: flex;
-            flex-direction: column;
-            flex-wrap: wrap;
-            padding: 1rem;
-            background-color: #1a1a1a;
-            border: 1px dashed var(--primary-color);
-            border-radius: 8px;
-        }
-        
-        .sidebar, .content {
-            width: 100%;
-            padding: 0;
-            border: none;
-            background-color: transparent;
-            margin-bottom: 0;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--section-spacing);
         }
 
         .section {
-            margin-bottom: 2rem;
+            margin-bottom: var(--section-spacing);
+            position: relative;
         }
 
         .section h2 {
-            font-size: 1.5rem;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            text-shadow: 0 0 3px var(--border-color);
+            font-size: 1.1rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.3rem;
+            margin-bottom: 1rem;
             color: var(--primary-color);
-            border-bottom-color: var(--primary-color);
+            font-weight: normal;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: var(--glow);
         }
 
         p, li {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             line-height: 1.6;
             color: var(--text-light);
+            margin: 0.5rem 0;
         }
 
         ul {
             list-style-type: none;
             padding: 0;
+            margin: 0;
         }
 
         ul li {
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
+            padding-left: 1.2rem;
+            position: relative;
         }
         
-        ul li i {
-            width: 25px;
-            text-align: center;
+        ul li:before {
+            content: ">";
+            position: absolute;
+            left: 0;
             color: var(--primary-color);
-            margin-right: 10px;
-            text-shadow: 0 0 2px var(--primary-color);
         }
 
         /* Skills section */
         .skills-list {
-            margin-top: 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 0.8rem;
+            margin-top: 0.8rem;
         }
 
         .skill-item {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0.8rem;
-            color: var(--text-light);
+            flex-direction: column;
+            gap: 0.2rem;
         }
 
-        .skill-item span {
-            width: 120px;
+        .skill-name {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
         }
 
         .rating {
             display: flex;
-            gap: 5px;
-            font-size: 0.7rem;
-            color: var(--text-muted);
+            gap: 2px;
         }
 
         .rating .filled {
             color: var(--primary-color);
-            text-shadow: 0 0 2px var(--primary-color);
+            text-shadow: 0 0 3px var(--primary-color);
         }
 
         /* Content Section */
         .entry {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             position: relative;
+            padding-left: 0.8rem;
+            border-left: 1px solid var(--text-muted);
         }
 
         .entry h3 {
-            margin: 0;
-            font-size: 1.1rem;
+            margin: 0 0 0.2rem 0;
+            font-size: 0.95rem;
             color: var(--primary-color);
-            text-shadow: 0 0 2px var(--primary-color);
+            font-weight: normal;
         }
 
         .entry p {
             margin: 0.2rem 0;
             color: var(--text-light);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         .entry .year {
-            position: static;
-            display: block;
-            margin-top: 5px;
-            font-weight: 600;
+            display: inline-block;
+            background: rgba(0, 255, 65, 0.1);
+            padding: 0.1rem 0.4rem;
+            border-radius: 2px;
+            font-size: 0.7rem;
             color: var(--primary-color);
-            font-size: 0.9rem;
+            margin-top: 0.3rem;
+            font-family: 'Share Tech Mono', monospace;
+            border: 1px dashed var(--text-muted);
         }
         
         .entry ul {
-            list-style-type: none;
-            padding-left: 0;
             margin-top: 0.5rem;
-            color: var(--text-light);
-            font-size: 0.9rem;
         }
 
-        .entry ul li::before {
-            content: "> ";
-            color: var(--primary-color);
+        .entry ul li {
+            margin-bottom: 0.3rem;
+            font-size: 0.85rem;
         }
 
-        /* Video Section */
-        .video-container {
+        /* Media elements */
+        .media-container {
             width: 100%;
             display: flex;
             justify-content: center;
-            margin-top: 2rem;
+            margin: 1.5rem 0;
         }
         
+        .gif-wrapper {
+            max-width: 90%;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--glow);
+            overflow: hidden;
+        }
+        
+        .gif-wrapper img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
         .video-wrapper {
             position: relative;
-            width: 80%; /* Sesuaikan lebar sesuai keinginan Anda */
-            padding-bottom: calc(80% * 3 / 4); /* Rasio aspek 4:3 */
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
             overflow: hidden;
-            border: 1px dashed var(--primary-color);
-            border-radius: 5px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--glow);
         }
 
         .video-wrapper video {
@@ -207,123 +554,315 @@
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: contain; /* Memastikan video sesuai dengan rasio aspek tanpa terdistorsi */
+            object-fit: cover;
+        }
+
+        /* Links */
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            position: relative;
+        }
+
+        a:hover {
+            text-shadow: var(--glow);
+        }
+
+        a:hover::after {
+            content: "_";
+            position: absolute;
+            right: -3px;
+            animation: blink 1s infinite;
+        }
+
+        /* Scanline effect */
+        .scanlines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to bottom,
+                rgba(0, 255, 65, 0.03) 0%,
+                rgba(0, 0, 0, 0.1) 50%,
+                rgba(0, 255, 65, 0.03) 100%
+            );
+            background-size: 100% 4px;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        /* Responsive adjustments */
+        @media (min-width: 768px) {
+            .container {
+                padding: 2rem;
+            }
+            
+            .main-content {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .section-wide {
+                grid-column: span 2;
+            }
+            
+            .header h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+        /* Hacker typing animation */
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        /* Glitch effect */
+        .glitch {
+            position: relative;
+        }
+
+        .glitch::before, .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+        }
+
+        .glitch::before {
+            color: #0ff;
+            z-index: -1;
+            animation: glitch-effect 3s infinite;
+        }
+
+        .glitch::after {
+            color: #f0f;
+            z-index: -2;
+            animation: glitch-effect 2s infinite reverse;
+        }
+
+        @keyframes glitch-effect {
+            0% { transform: translate(0) }
+            20% { transform: translate(-3px, 3px) }
+            40% { transform: translate(-3px, -3px) }
+            60% { transform: translate(3px, 3px) }
+            80% { transform: translate(3px, -3px) }
+            100% { transform: translate(0) }
+        }
+
+        /* Binary rain effect */
+        .binary-rain {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+            opacity: 0.1;
+        }
+
+        .binary-digit {
+            position: absolute;
+            color: var(--primary-color);
+            font-size: 0.8rem;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to { transform: translateY(100vh) }
         }
     </style>
 </head>
 <body>
 
 <div class="container">
+    <div class="binary-rain" id="binaryRain"></div>
+    <div class="scanlines"></div>
+    
     <header class="header">
-        <h1>名前 : MUHAMMAD FATKHUL AMIN</h1>
+        <h1 class="glitch" data-text="MUHAMMAD FATKHUL AMIN">MUHAMMAD FATKHUL AMIN</h1>
+        <div class="terminal-line">
+            <span class="prompt">@junior_student_root</span>
+            <span class="typing-text"></span>
+        </div>
+        <p>Network Security Researcher | Ethical Student</p>
     </header>
-
+    
+    <div class="media-container">
+        <div class="gif-wrapper">
+            <img src="1.gif" alt="Matrix Code Animation">
+        </div>
+    </div>
+    
     <main class="main-content">
         <section class="section">
-            <h2>PROFIL 👤</h2>
-            <p>seorang pelajar yang memiliki semangat untuk bekerja sama dan belajar dalam kemampuan merencanakan manipulasi di Jaringan</p>
+            <h2><span class="prompt">👤</span> PROFIL</h2>
+            <div class="terminal-line">
+                <span class="prompt"></span>
+                <p>Seorang pelajar yang memiliki semangat untuk belajar dan kerja sama dalam keamanan jaringan, eksploitasi sistem, manipulasi jaringan dan pengembangan tools keamanan.</p>
+            </div>
         </section>
+        
         <section class="section">
-            <h2>KONTAK 📱</h2>
+            <h2><span class="prompt">📱</span> KONTAK</h2>
             <ul>
-                <li><i class="fas fa-terminal"></i> TEL: +6281284090061</li>
-                <li><i class="fas fa-terminal"></i> EMAIL: serverdoomsday99@gmail.com</li>
-                <li><i class="fas fa-terminal"></i> LOC: Jateng,Indonesia</li>
-                <li><i class="fas fa-terminal"></i> IG: azq1178</li>
+                <li><span class="prompt">$</span> Telp: +6281284090061</li>
+                <li><span class="prompt">$</span> Email: serverdoomsday99@gmail.com</li>
+                <li><span class="prompt">$</span> Lokasi: Jateng, Indonesia</li>
+                <li><span class="prompt">$</span> Github : qilp95</li>
+                <li><span class="prompt">$</span> IG: azq1178</li>
             </ul>
         </section>
 
         <section class="section">
-            <h2>KEAHLIAN 🧢</h2>
+            <h2><span class="prompt">🧢</span> KEAHLIAN</h2>
             <div class="skills-list">
                 <div class="skill-item">
-                    <span>KERJA SAMA</span>
+                    <div class="skill-name">
+                        <span class="prompt">></span> kerja sama
+                    </div>
                     <div class="rating">
-                        <i class="fas fa-square filled"></i>
-                        <i class="fas fa-square filled"></i>
-                        <i class="fas fa-square filled"></i>
-                        <i class="fas fa-square filled"></i>
-                        <i class="fas fa-square filled"></i>
+                        <i class="fas fa-circle filled"></i>
+                        <i class="fas fa-circle filled"></i>
+                        <i class="fas fa-circle filled"></i>
+                        <i class="fas fa-circle filled"></i>
+                        <i class="fas fa-circle"></i>
                     </div>
                 </div>
                 <div class="skill-item">
-                    <span>FLEKSIBEL</span>
+                    <div class="skill-name">
+                        <span class="prompt">></span> pengembangan script
+                    </div>
                     <div class="rating">
-                        <i class="fas fa-square filled"></i>
-                        <i class="fas fa-square filled"></i>
-                        <i class="fas fa-square filled"></i>
-                        <i class="fas fa-square"></i>
-                        <i class="fas fa-square"></i>
+                        <i class="fas fa-circle filled"></i>
+                        <i class="fas fa-circle filled"></i>
+                        <i class="fas fa-circle filled"></i>
                     </div>
                 </div>
                 <div class="skill-item">
-                    <span>KREATIF</span>
+                    <div class="skill-name">
+                        <span class="prompt">></span> fleksibel
+                    </div>
                     <div class="rating">
-                        <i class="fas fa-square filled"></i>
-                        <i class="fas fa-square filled"></i>
-                        <i class="fas fa-square filled"></i>
-                        <i class="fas fa-square filled"></i>
-                        <i class="fas fa-square"></i>
+                        <i class="fas fa-circle filled"></i>
+                        <i class="fas fa-circle filled"></i>
+                        <i class="fas fa-circle filled"></i>
+                        <i class="fas fa-circle filled"></i>
+                        <i class="fas fa-circle filled"></i>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">
+                        <span class="prompt">></span> kreatif
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-circle filled"></i>
+                        <i class="fas fa-circle filled"></i>
+                        <i class="fas fa-circle"></i>
+                        <i class="fas fa-circle"></i>
                     </div>
                 </div>
             </div>
         </section>
         
         <section class="section">
-            <h2>PENDIDIKAN 🎓</h2>
+            <h2><span class="prompt">🎓</span> PENDIDIKAN</h2>
             <div class="entry">
-                <h3>[SMKS] HADZIQIYYAH</h3>
-                <p>TJKT Computer and telecommunications network techniques</p>
+                <h3><span class="prompt">></span> SMKS Hadziqiyyah</h3>
+                <p>Teknik Jaringan Komputer dan Telekomunikasi (TJKT)</p>
                 <span class="year">2022 - 2025</span>
             </div>
         </section>
 
         <section class="section">
-            <h2>PENGALAMAN 🔬</h2>
+            <h2><span class="prompt">🔬</span> PENGALAMAN</h2>
             <div class="entry">
-                <h3>MEDIA SOSIAL FREELANCE</h3>
-                <ul>
-                    <li>Perbaikan script web </li>
-                    <li>Pembuatan Bot WhatsApp </li>
-                </ul>
+                <h3><span class="prompt">></span> Perbaikan script</h3>
+                <h3><span class="prompt">></span> pengembangan script bot</h3>
             </div>
         </section>
-        <section class="section">
-    <h2>WEB PEMINDAIAN JARINGAN & ENUMERASI 🚀</h2>
-    <div class="entry">
-        <h3>Shodan</h3>
-        <p>Mesin pencari untuk perangkat yang terhubung ke internet 🌐</p>
-        <ul>
-            <li>🔗 https://www.shodan.io</li>
-        </ul>
-    </div>
-    <div class="entry">
-        <h3>Censys</h3>
-        <p>Mirip dengan Shodan, cocok untuk analisis lebih dalam</p>
-        <ul>
-            <li>🔗 https://censys.io</li>
-        </ul>
-    </div>
-    <div class="entry">
-        <h3>ZoomEye</h3>
-        <p>Mesin pencari perangkat & layanan berbasis IP</p>
-        <ul>
-            <li>🔗 https://www.zoomeye.org</li>
-        </ul>
-    </div>
-</section>
+        
+        <section class="section section-wide">
+            <h2><span class="prompt">🚀</span> SECURITY TOOLS</h2>
+            <div class="entry">
+                <h3><span class="prompt">•</span> Shodan</h3>
+                <p>Mesin pencari untuk perangkat yang terhubung ke internet</p>
+                <p><span class="prompt"></span> <a href="https://www.shodan.io" target="_blank">https://www.shodan.io</a></p>
+            </div>
+            <div class="entry">
+                <h3><span class="prompt">•</span> Censys</h3>
+                <p>Platform intelijen internet untuk asset discovery</p>
+                <p><span class="prompt"></span> <a href="https://censys.io" target="_blank">https://censys.io</a></p>
+            </div>
+            <div class="entry">
+                <h3><span class="prompt">•</span> ZoomEye</h3>
+                <p>Cybersecurity search engine untuk perangkat jaringan</p>
+                <p><span class="prompt"></span> <a href="https://www.zoomeye.org" target="_blank">https://www.zoomeye.org</a></p>
+            </div>
+        </section>
     </main>
     
-    <div id="video-content" class="content-section">
-        <div class="video-container">
-            <div class="video-wrapper">
-                <video controls autoplay loop playsinline controlsList="nodownload">
-                    <source src="videos1.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
+    <div class="media-container">
+        <div class="video-wrapper">
+            <video controls autoplay loop playsinline controlsList="nodownload">
+                <source src="videos1.mp4" type="video/mp4">
+                [!] Browser tidak mendukung video
+            </video>
         </div>
     </div>
 </div>
+
+<script>
+    // Binary rain effect
+    const binaryRain = document.getElementById('binaryRain');
+    const chars = '01';
+    
+    function createBinary() {
+        const digit = document.createElement('div');
+        digit.className = 'binary-digit';
+        digit.textContent = chars.charAt(Math.floor(Math.random() * chars.length));
+        digit.style.left = Math.random() * 100 + 'vw';
+        digit.style.animationDuration = (Math.random() * 3 + 2) + 's';
+        digit.style.animationDelay = Math.random() * 5 + 's';
+        binaryRain.appendChild(digit);
+        
+        // Remove digit after animation completes
+        setTimeout(() => {
+            digit.remove();
+        }, parseFloat(digit.style.animationDuration) * 1000);
+    }
+    
+    // Create initial binary digits
+    for (let i = 0; i < 50; i++) {
+        createBinary();
+    }
+    
+    // Continue creating new digits
+    setInterval(createBinary, 100);
+    
+    // Terminal typing effect
+    const typingText = document.querySelector('.typing-text');
+    const text = "sebagai identitas";
+    let i = 0;
+    
+    function typeWriter() {
+        if (i < text.length) {
+            typingText.textContent += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, Math.random() * 200 + 50);
+        } else {
+            // After typing completes, keep blinking cursor
+            document.querySelector('.cursor').style.animation = 'blink 1s infinite';
+        }
+    }
+    
+    // Start typing after a delay
+    setTimeout(typeWriter, 1000);
+</script>
 </body>
 </html>
