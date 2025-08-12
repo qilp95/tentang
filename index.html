@@ -734,18 +734,6 @@
         currentSlide = index;
         updateSlider();
     }
-    
-    // Auto-advance slides
-    let slideInterval = setInterval(nextSlide, 5000);
-    
-    slider.addEventListener('mouseenter', () => {
-        clearInterval(slideInterval);
-    });
-    
-    slider.addEventListener('mouseleave', () => {
-        slideInterval = setInterval(nextSlide, 5000);
-    });
-    
     // Initialize slider
     updateSlider();
 </script>
